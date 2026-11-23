@@ -1,0 +1,43 @@
+/* Keep settlement typography scoped to the composer, including its nested caption. */
+.dc-composer-rules-list li{align-content:start;grid-template-rows:max-content max-content;}
+.dc-composer-rules-list strong{align-items:baseline;line-height:1.5;}
+.dc-composer-tabs{position:relative;isolation:isolate;}
+.dc-composer-tabs-thumb{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:8px;background:var(--dc-text-1);pointer-events:none;will-change:transform;z-index:0;}
+.dc-composer-tabs button{position:relative;z-index:1;}
+.dc-composer-tabs button.is-active{background:transparent;}
+.dc-billing.dc-composer-cycle{position:relative;isolation:isolate;}
+.dc-composer-cycle-thumb{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--dc-accent);pointer-events:none;will-change:transform;z-index:0;}
+.dc-billing.dc-composer-cycle button{position:relative;z-index:1;}
+.dc-billing.dc-composer-cycle button.is-active{background:transparent;box-shadow:none;}
+.dc-composer-summary .dc-composer-settlement{padding-top:4px;}
+.dc-composer-summary .dc-composer-discount-note{
+ display:grid;grid-template-columns:auto 1fr auto auto;align-items:baseline;
+ gap:8px 10px;margin-top:12px;font-size:10px;line-height:1.6;
+}
+.dc-composer-summary .dc-composer-discount-note>span,
+.dc-composer-summary .dc-composer-discount-note>strong{white-space:nowrap;}
+.dc-composer-summary .dc-composer-discount-note>small{
+ grid-column:1/-1;width:auto;font-size:10px;line-height:1.6;
+}
+.dc-composer-summary .dc-summary-total{display:flex;align-items:baseline;flex-wrap:nowrap;gap:8px;margin:24px 0 18px;white-space:nowrap;}
+.dc-composer-summary .dc-summary-total>span{flex:none;font-size:11px;line-height:1.5;}
+.dc-composer-summary .dc-summary-total>strong{margin:0;font-size:36px;line-height:1.15;font-weight:750;letter-spacing:-.035em;color:var(--dc-text-1);}
+.dc-composer-summary .dc-summary-total>small{flex:none;margin:0 0 0 auto;font-size:10px;line-height:1.6;}
+@container composer-total (max-width:270px){
+ .dc-composer-summary .dc-summary-total{gap:6px;}
+ .dc-composer-summary .dc-summary-total>strong{font-size:32px;}
+ .dc-composer-summary .dc-summary-total>small{font-size:9px;}
+}
+.dc-composer-summary .dc-composer-settlement{container-type:inline-size;container-name:composer-total;}
+.dc-composer-summary .dc-composer-price-caption{
+ margin:0 0 20px;font-size:11px;line-height:1.8;letter-spacing:.02em;
+ color:var(--dc-text-3);text-wrap:pretty;
+}
+.dc-composer-summary .dc-composer-settlement>button{
+ min-height:46px;padding:12px 20px;font-size:12px;line-height:1.5;gap:10px;
+}
+.dc-composer-summary .dc-composer-rules-footer{margin-top:10px;min-height:28px;}
+@media(max-width:420px){
+ .dc-composer-summary .dc-composer-discount-note{column-gap:7px;font-size:9px;}
+ .dc-composer-summary .dc-composer-discount-note>strong{font-size:10px;}
+}

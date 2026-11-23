@@ -1,0 +1,109 @@
+/* Compact order prompt: copy on the left, configuration action on the right. */
+.data-commerce .dc-service-overview {
+  margin-bottom: 108px;
+  padding: 25px 28px;
+  border: 1px solid #e5e5e2;
+  border-radius: 22px;
+  background: #fff;
+}
+.data-commerce .dc-overview-order {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+}
+.data-commerce .dc-overview-order > div { min-width: 0; }
+.data-commerce .dc-overview-order h3 {
+  margin: 0;
+  color: var(--dc-text-1);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .01em;
+}
+.data-commerce .dc-overview-order p {
+  margin: 8px 0 0;
+  color: var(--dc-text-2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.data-commerce .dc-overview-module-count {
+  padding: 2px 9px;
+  border-radius: 6px;
+  background: #f1f1ee;
+  color: #444;
+  font-size: 11px;
+  font-weight: 500;
+}
+.data-commerce .dc-overview-order button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 12px;
+  margin: 0;
+  padding: 5px 20px 5px 5px;
+  min-height: 44px;
+  border: 1px solid #dededb;
+  border-radius: 999px;
+  background: #fff;
+  color: #171717;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform .2s, border-color .3s;
+}
+.data-commerce .dc-overview-order button::before { content: ''; position: absolute; left: 5px; top: 5px; bottom: 5px; width: 34px; z-index: 0; border-radius: 999px; background: #171717; pointer-events: none; transition: width .48s cubic-bezier(.22,1,.36,1),left .48s cubic-bezier(.22,1,.36,1),top .48s cubic-bezier(.22,1,.36,1),bottom .48s cubic-bezier(.22,1,.36,1); }
+.data-commerce .dc-order-label { position: relative; z-index: 1; transition: color .36s; }
+.data-commerce .dc-order-arrow { position: relative; z-index: 1; order: -1; display: grid; place-items: center; width: 34px; height: 34px; flex: none; border-radius: 50%; color: #fff; }
+.data-commerce .dc-overview-order button:is(:hover,:focus-visible) { border-color: #171717; }
+.data-commerce .dc-overview-order button:is(:hover,:focus-visible,:active)::before { left: -1px; top: -1px; bottom: -1px; width: calc(100% + 2px); }
+.data-commerce .dc-overview-order button:is(:hover,:focus-visible) .dc-order-label { color: #fff; }
+.data-commerce .dc-overview-order button:active { transform: scale(.98); }
+.data-commerce .dc-overview-order button:focus-visible { outline: 2px solid #111; outline-offset: 5px; }
+.data-commerce #plans-title,
+.data-commerce #permissions-title,
+.data-commerce #data-service-overview { scroll-margin-top: 100px; }
+
+
+/* Keep the two commerce section titles refined and balanced with their cards. */
+.data-commerce .dc-plans > .dc-container > .dc-section-heading h2,
+.data-commerce .dc-permissions > .dc-container > .dc-section-heading h2 {
+  font-size: 32px;
+}
+@media (max-width: 640px) {
+  .data-commerce .dc-plans > .dc-container > .dc-section-heading h2,
+  .data-commerce .dc-permissions > .dc-container > .dc-section-heading h2 { font-size: 24px; }
+  .data-commerce .dc-service-overview { padding: 22px; }
+  .data-commerce .dc-overview-order { flex-direction: column; align-items: flex-start; gap: 22px; }
+  .data-commerce .dc-overview-order h3 { font-size: 18px; line-height: 1.6; }
+  .data-commerce .dc-overview-order p { font-size: 12px; }
+  .data-commerce .dc-overview-order button { align-self: flex-end; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .data-commerce .dc-overview-order button,
+  .data-commerce .dc-overview-order button::before,
+  .data-commerce .dc-overview-order button span,
+  .data-commerce .dc-overview-order button svg { transition: none; }
+}
+
+/* Keep the data-service hero background neutral black; preserve its grid and motion layers. */
+.data-commerce ~ .hero-stage,
+.hero-stage[data-v-dbc66cd2] { background: #080808 !important; }
+/* Neutralize the service card stack tint while keeping its contrast and motion. */
+.swap-card[data-v-51d2391d] { background: #111214f5; }
+.service-card-market[data-v-51d2391d],
+.service-card-factor[data-v-51d2391d],
+.service-card-strategy[data-v-51d2391d] { background: linear-gradient(145deg,#181a1cf5,#0a0b0cf5); }
